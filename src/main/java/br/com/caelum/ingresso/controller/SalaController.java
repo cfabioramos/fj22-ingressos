@@ -94,4 +94,5 @@ public class SalaController {
     public void delete(@PathVariable("id") Integer id){
         salaDao.delete(id);
     }
+    
 }
