@@ -24,7 +24,6 @@ public class Sala {
     @OneToMany(fetch = FetchType.EAGER)
     private List<Lugar> lugares = new ArrayList<>();
     
-    @NotBlank
     private BigDecimal preco;
 
     /**
