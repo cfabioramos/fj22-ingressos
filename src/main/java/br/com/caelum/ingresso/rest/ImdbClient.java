@@ -22,9 +22,11 @@ public class ImdbClient {
 		String titulo = filme.getNome().replace(" ", "+");
 		
 		String url = String.format("https://imdb-fj22.herokuapp.com/imdb?title=%s", titulo);
-		
+		System.out.println(url);
 		try{
-			return Optional.of(client.getForObject(url, tClass));
+			T result = client.getForObject(url, tClass);
+			System.out.println(result);
+			return Optional.of(result);
 			
 		}catch(RestClientException e){
 			

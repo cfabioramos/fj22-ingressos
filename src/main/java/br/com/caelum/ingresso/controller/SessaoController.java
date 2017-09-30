@@ -18,6 +18,7 @@ import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.ImagemCapa;
+import br.com.caelum.ingresso.model.Ingresso;
 import br.com.caelum.ingresso.model.Sessao;
 import br.com.caelum.ingresso.model.form.SessaoForm;
 import br.com.caelum.ingresso.rest.ImdbClient;
@@ -69,10 +70,12 @@ public class SessaoController {
 		ModelAndView modelAndView = new ModelAndView("sessao/lugares");
 		
 		Sessao sessao = sessaoDao.findOne(sessaoId);
+		
 		Optional<ImagemCapa> imagemCapa = client.request(sessao.getFilme(), ImagemCapa.class);
 		
 		modelAndView.addObject("sessao", sessao);
 		modelAndView.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
+		modelAndView.addObject("tiposDeIngressos", Ingresso.TipoDeIngresso.values());
 		
 		return modelAndView;
 	}
