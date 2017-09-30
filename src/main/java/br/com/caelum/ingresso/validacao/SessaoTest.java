@@ -15,6 +15,7 @@ import br.com.caelum.ingresso.model.Ingresso;
 import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
+import br.com.caelum.ingresso.model.TipoDeIngresso;
 
 public class SessaoTest {
 	
@@ -46,7 +47,7 @@ public class SessaoTest {
 		
 		Sessao sessao = new Sessao(LocalTime.parse("10:00:00"), rogueOne, eldorado7);
 		
-		Ingresso ingresso = new Ingresso(sessao, Ingresso.TipoDeIngresso.INTEIRO, a1);
+		Ingresso ingresso = new Ingresso(sessao, TipoDeIngresso.INTEIRO, a1);
 		
 		Set<Ingresso> ingressos = Stream.of(ingresso).collect(Collectors.toSet());
 		

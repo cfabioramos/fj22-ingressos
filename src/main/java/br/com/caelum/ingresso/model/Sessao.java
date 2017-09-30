@@ -2,6 +2,7 @@ package br.com.caelum.ingresso.model;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class Sessao {
 	private Filme filme;
 	
 	@OneToMany(mappedBy="sessao", fetch=FetchType.EAGER)
-	private Set<Ingresso> ingressos;
+	private Set<Ingresso> ingressos = new HashSet<>();
 
 	private BigDecimal preco;
 	

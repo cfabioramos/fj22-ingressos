@@ -32,6 +32,22 @@ public class Ingresso {
 	@Enumerated(EnumType.STRING)
 	private TipoDeIngresso tipoDeIngresso;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
 	/**
 	 * @deprecated hibernate only
 	 */
@@ -70,25 +86,4 @@ public class Ingresso {
 		this.tipoDeIngresso = tipoDeIngresso;
 	}
 
-	public enum TipoDeIngresso{
-		
-		INTEIRO(new SemDesconto()),
-		ESTUDANTE(new DescontoEstudante()),
-		BANCO(new DescontoDeTrintaPorCentoParaBancos());
-		
-		private final Desconto desconto;
-		
-		TipoDeIngresso(Desconto desconto){
-			this.desconto = desconto;
-		}
-		
-		public BigDecimal aplicaDesconto(BigDecimal valor){
-			return desconto.aplicarDescontoSobre(valor);
-		}
-		
-		public String getDescricao(){
-			return desconto.getDescricao();
-		}
-	}
-	
 }

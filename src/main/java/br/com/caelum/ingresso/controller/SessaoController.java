@@ -19,8 +19,8 @@ import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.Carrinho;
 import br.com.caelum.ingresso.model.ImagemCapa;
-import br.com.caelum.ingresso.model.Ingresso;
 import br.com.caelum.ingresso.model.Sessao;
+import br.com.caelum.ingresso.model.TipoDeIngresso;
 import br.com.caelum.ingresso.model.form.SessaoForm;
 import br.com.caelum.ingresso.rest.ImdbClient;
 
@@ -79,7 +79,7 @@ public class SessaoController {
 		modelAndView.addObject("sessao", sessao);
 		modelAndView.addObject("carrinho", carrinho);
 		modelAndView.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
-		modelAndView.addObject("tiposDeIngressos", Ingresso.TipoDeIngresso.values());
+		modelAndView.addObject("tiposDeIngressos", TipoDeIngresso.values());
 		
 		return modelAndView;
 	}
