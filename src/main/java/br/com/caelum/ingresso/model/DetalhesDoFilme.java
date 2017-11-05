@@ -91,5 +91,12 @@ public class DetalhesDoFilme {
 	public void setAvaliacao(Double avaliacao) {
 		this.avaliacao = avaliacao;
 	}
+
+	@Override
+	public String toString() {
+		return "DetalhesDoFilme [titulo=" + titulo + ", ano=" + ano + ", imagem=" + imagem + ", diretores=" + diretores
+				+ ", escritores=" + escritores + ", atores=" + atores + ", descricao=" + descricao + ", avaliacao="
+				+ avaliacao + "]";
+	}
 	
 }
