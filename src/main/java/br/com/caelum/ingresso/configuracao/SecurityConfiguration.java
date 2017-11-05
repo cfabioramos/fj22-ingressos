@@ -2,7 +2,6 @@ package br.com.caelum.ingresso.configuracao;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -43,7 +42,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 					.logout()
 						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 						.permitAll();
-		
 		logger.log(Level.INFO, 
 				"Executou configure(HttpSecurity http) em SecurityConfiguration");
 	}
@@ -51,7 +49,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(WebSecurity web) throws Exception{
 		web.ignoring().antMatchers("/assets/**");
-		
 		logger.log(Level.INFO, 
 				"Executou web.ignoring().antMatchers(\"/assets/**\") em SecurityConfiguration");
 	}
@@ -64,7 +61,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	public void configure(AuthenticationManagerBuilder auth)throws Exception{
 		auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
-		
 		logger.log(Level.INFO, 
 				"Executou auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder()) em SecurityConfiguration");
 	}

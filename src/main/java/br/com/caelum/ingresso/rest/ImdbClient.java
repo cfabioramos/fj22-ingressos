@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.caelum.ingresso.model.DetalhesDoFilme;
 import br.com.caelum.ingresso.model.Filme;
 
 @Component
@@ -24,7 +23,6 @@ public class ImdbClient {
 		String url = String.format("https://imdb-fj22.herokuapp.com/imdb?title=%s", titulo);
 		try{
 			T result = client.getForObject(url, tClass);
-			System.out.println(result);
 			return Optional.of(result);
 			
 		}catch(RestClientException e){

@@ -2,7 +2,6 @@ package br.com.caelum.ingresso.configuracao;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 public class SecurityInitializer extends AbstractSecurityWebApplicationInitializer{
